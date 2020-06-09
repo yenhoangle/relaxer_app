@@ -27,3 +27,57 @@ body {
     position: relative;
     transform: scale(1); /* for shrink and grow later */
 }
+
+.gradient-circle {
+    background: conic-gradient(
+      #55b7a4 0%, /* percentage degrees out of 360*/
+      #4ca493 40%,
+      #fff 40%,
+      #fff 60%,
+      #336d62 60%,
+      #2a5b52 100%
+    );
+    height: 320px; /*peeks out of the 300px container */
+    width: 320px;
+    position: absolute;
+    z-index: -2;
+    border-radius: 50%; /*changes it to a circle */
+}
+
+.circle {
+    background-color: #010f1c;
+    height: 100%; /* same as container*/
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index:-1;
+    border-radius: 50%;
+}
+
+.pointer-container { /* a rectangle container extending toward the middle of the circle */
+    position: absolute;
+    top: -40px;
+    left: 140px;
+    width: 20px;
+    height: 190px;
+    animation: rotate 7.5s linear forwards infinite;
+    transform-origin: bottom center; /*makes the animation actually rotates outside the big circle*/
+}
+
+.pointer{
+    background-color: #fff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: block;
+
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    } to {
+        transform: rotate(360deg);
+    }
+}
