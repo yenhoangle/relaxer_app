@@ -39,6 +39,8 @@ body {
     );
     height: 320px; /*peeks out of the 300px container */
     width: 320px;
+    top: -10px;
+    left: -10px;
     position: absolute;
     z-index: -2;
     border-radius: 50%; /*changes it to a circle */
@@ -74,10 +76,34 @@ body {
 
 }
 
+.container.grow {
+    animation: grow 3s linear forwards;
+}
+
+.container.shrink {
+    animation: shrink 3s linear forwards;
+}
+
 @keyframes rotate {
     from {
         transform: rotate(0deg);
     } to {
         transform: rotate(360deg);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    } to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes shrink {
+    from {
+        transform: scale(1.2);
+    } to {
+        transform: scale(1);
     }
 }
